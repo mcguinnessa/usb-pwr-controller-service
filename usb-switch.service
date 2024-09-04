@@ -1,0 +1,12 @@
+[Unit]
+Description=Provides and endpoint to set the state of the USB switch
+After=network.target
+
+[Service]
+User=alex
+WorkingDirectory=/home/alex/scripts/usb-pwr-controller-service/
+ExecStart=/home/alex/scripts/usb-pwr-controller-service/.venv/bin/gunicorn -b 0.0.0.0:5003 -w 1 usb_switch_server:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+gunicorn==22.0.0
+flask==3.0.3
+RPi.GPIO==0.7.1
+
